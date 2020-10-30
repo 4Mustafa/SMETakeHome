@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Demo #1</title>
+</head>
+<style>
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+</style>
+
+<body>
+    <h1>Open console log for demo #1</h1>
+    <!-- DEMO #1 -->
+
+    <script type="text/javascript">
+        function DivisionClosure(a) {
+            return function (b) {
+                return a / b;
+            };
+        }
+
+        var DivClosure1 = DivisionClosure(10);
+        var DivClosure2 = DivisionClosure(50);
+
+        console.log(DivClosure1(2));
+        console.log(DivClosure2(5)); 
+    </script>
+
+
+    <!-- DEMO #2 -->
+
+    <!-- <h1> Demo #2</h1>
+    <h3>this is how </h3>
+    <h3>you can resize font size </h3>
+    <h3>with closures</h3>
+
+    <a href="#" id="S12">12</a>
+    <a href="#" id="S14">14</a>
+    <a href="#" id="S16">16</a>
+
+    <script type="text/javascript">
+        function SizeAdjust(num) {
+            return function () {
+                document.body.style.fontSize = num + 'px';
+            };
+        }
+
+        var S12 = SizeAdjust(12);
+        var S14 = SizeAdjust(14);
+        var S16 = SizeAdjust(16);
+
+        document.getElementById('S12').onclick = S12;
+        document.getElementById('S14').onclick = S14;
+        document.getElementById('S16').onclick = S16;
+
+    </script> -->
+
+
+    <!-- DEMO #3 -->
+    <!-- <h1>Open console log for demo #3</h1>
+
+    <script>
+
+        var count = (function () {
+            var private = 0;
+            function Adjuster(num) {
+                private += num;
+            }
+
+            return {
+                add: function () {
+                    Adjuster(1);
+                },
+
+                subtract: function () {
+                    Adjuster(-1);
+                },
+
+                value: function () {
+                    return private;
+                }
+            };
+        })();
+
+        console.log(count.value());  // 0.
+
+        count.add();
+        count.add();
+        count.add();
+        count.add();
+
+        console.log(count.value());  // 4.
+        count.add();
+        count.subtract();
+        count.subtract();
+        count.subtract();
+        count.subtract();
+
+
+        console.log(count.value());  // 1.
+    </script> -->
+</body>
+
+</html>

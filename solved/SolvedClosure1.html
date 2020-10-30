@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <title> Closure #1</title>
+</head>
+
+<body>
+    <h1> "Open console"</h1>
+    <script type="text/javascript">
+        function AddClosure(a) {
+            return function (b) {
+                return a + b;
+            };
+        }
+
+        var AddClosure1 = AddClosure(9);
+        var AddClosure2 = AddClosure(14);
+
+        console.log('should be 11', AddClosure1(2));
+        console.log('should be 19', AddClosure2(5)); 
+    </script>
+
+
+
+    <script type="text/javascript">
+        function SubtractClosure(a) {
+            return function (b) {
+                return a - b;
+            };
+        }
+
+        var SubClosure1 = SubtractClosure(20);
+        var SubClosure2 = SubtractClosure(3);
+
+        console.log('should be 16', SubClosure1(4));
+        console.log('should be -27', SubClosure2(30)); 
+    </script>
+</body>
+
+</html>

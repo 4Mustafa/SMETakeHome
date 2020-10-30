@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Closure #3</title>
+</head>
+
+<body>
+    <h1> "Open console"</h1>
+
+    <script type="text/javascript">
+        var count = (function () {
+            var private = 2;
+            function Adjuster(num) {
+                if (num === 1) {
+                    private = private * 2;
+                }
+                else private = private / 2
+            }
+
+            return {
+                Multiply: function () {
+                    Adjuster(1);
+                },
+
+                Divide: function () {
+                    Adjuster(2);
+                },
+
+                value: function () {
+                    return private;
+                }
+            };
+        })();
+
+        console.log(count.value());  // 2.
+        count.Multiply();
+        console.log(count.value());  // 4.
+        count.Divide();
+        console.log(count.value());  // 2.
+        count.Divide();
+        console.log(count.value());  // 1.
+
+
+    </script>
+</body>
+
+</html>

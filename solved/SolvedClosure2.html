@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <title> Closure #2</title>
+
+</head>
+<style>
+    body {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+</style>
+
+<body id="size16">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam turpis eros, bibendum sed pellentesque eget,
+        tincidunt eu
+        risus. Cras hendrerit tristique quam, sed lacinia dui dapibus in. Orci varius natoque penatibus et magnis dis
+        parturient
+        montes, nascetur ridiculus mus. Curabitur vulputate lacinia ligula. Aliquam non nibh a orci finibus pulvinar.
+        Proin
+        porttitor neque non massa mattis, eget euismod mauris semper. Suspendisse potenti. Mauris et viverra quam.</p>
+
+    <a href="#" id="S44">44</a>
+    <a href="#" id="S100">100</a>
+    <a href="#" id="S6">6</a>
+
+    <script type="text/javascript">
+        function MarginAdjust(num) {
+            return function () {
+                document.body.style.marginLeft = num + 'px';
+            };
+        }
+
+        var Margin44 = MarginAdjust(44);
+        var Margin100 = MarginAdjust(100);
+        var Margin6 = MarginAdjust(6);
+
+        document.getElementById('S44').onclick = Margin44;
+        document.getElementById('S100').onclick = Margin100;
+        document.getElementById('S6').onclick = Margin6;
+
+    </script>
+</body>
+</body>
+
+</html>
